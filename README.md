@@ -2,31 +2,43 @@
 
 ## Context
 
-You are given a data file representing information gathered using an online questionnaire. This data can vary in size, from a few records to millions of records (but assume it will generally fit in memory). We want to perform some simple analyses on this data. While the speed of importing the data is not critical, the performance of the analyses is.   
+You are given a data file representing information gathered using an online questionnaire. This data can vary in size, from a few records to millions of records, and from a few attributes to many thousands of attributes (columns). You may assume the *raw* data will fit in memory. We want to perform some simple analyses on this data. The speed of importing the data is *not* important. The speed of the analyses *is* important.   
 
 ## Requirements
 
+
+### Functional
+
 Your implementation should be capable of the following:
 -   Read an input file (format defined later) and parse the data.
--   Perform several analyses on the data. The analyses are supplied using a simple syntax.
+-   Perform analyses on the data (details given below).
 -   Display or export the results of the analyses.
 
-You should also attach a small document with a concise explanation of your design decisions and any short cuts you take in your implementation.
+### Submission
 
-Your code has to be written in C++. It should compile with GCC and/or CLang. It should compile on GNU/Linux. You need to add a description on how to build and execute the program.
+-   You must attach a small document with a concise explanation of your design decisions and any short cuts you take in your implementation.
+-   Your code has to be written in C++. It should compile with GCC and/or CLang. You must add a description on how to build and execute the program.
+-   You are allowed to use *open source* libraries.
+
+### Extensibility 
+
+-   It should be easy to add new data types other than integer and string. 
+-   It should also be easy to extend the set of analyses.
 
 ### Analyses
 
 All the analyses are aggregations of a single attribute, grouped by another attribute. For example, we want to select the **average movie\_score grouped by age**. Your solution should support the following aggregations:
--   Average (rounds to the nearest integer)
+-   Average
 -   Minimum
 -   Maximum
 
 The aggregations only operate on integer attributes, the grouping may be on any type of attribute. Aggregations on attributes that are not of integer type should produce an error message.
 
+You do *not* know the analyses at the moment you are importing the data. The queries can change at any time, so do not assume they are static.
+
 #### Aggregation syntax
 
-It is left to the implementer to decide how aggregrations are supplied to the program. The program should parse the following syntax:
+It is left to the implementer to decide how aggregrations are supplied to the program. For example, the syntax might look like this:
 
     AVG <aggregation attribute> <grouping attribute>
     MIN <aggregation attribute> <grouping attribute>
@@ -37,10 +49,10 @@ It is left to the implementer to decide how aggregrations are supplied to the pr
 The data is supplied using the following format:
 -   Each line describes a record, a newline ('\n') character indicates the end of a line.
 -   The first line gives the name of each attribute.
--   The second line gives the types of each attribute.
+-   The second line gives the type of each attribute.
 -   The number and type of the attributes can differ with each input file.
 -   The values on each line are separated by a single space character.
--   Only integer and string attributes are currently supported (but it should be easy within your design to add more attribute types).
+-   Only integer and string attributes are currently supported.
 
 You may assume the following about the input:
 
@@ -80,5 +92,6 @@ Example analyses output:
     
     MIN age GROUPED BY movie_name
     inception      0
-    pulp fiction   62
+    pulp fiction   26
     ender's game   0
+
