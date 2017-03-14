@@ -2,7 +2,7 @@
 
 ## Context
 
-You are given a data file representing information gathered using an online questionnaire. This data can vary in size, from a few records to millions of records, and from a few attributes to many thousands of attributes (columns). You may assume the *raw* data will fit in memory. We want to perform some simple analyses on this data. The speed of importing the data is *not* important. The speed of the analyses *is* important.   
+You are given a data file representing information gathered using an online questionnaire. This data can vary in size, from a few records to millions of records, and from a few attributes to many thousands of attributes (columns). You may assume the *raw* data will fit in memory. We want to perform some simple analyses on this data. The speed of the analyses is the *main* focus of this assignment.
 
 ## Requirements
 
@@ -13,6 +13,10 @@ Your implementation should be capable of the following:
 -   Read an input file (format defined later) and parse the data.
 -   Perform analyses on the data (details given below).
 -   Display or export the results of the analyses.
+
+### Constraints
+
+-   Your import should be linear in the number of data points.
 
 ### Submission
 
