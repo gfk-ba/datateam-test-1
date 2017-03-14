@@ -16,7 +16,7 @@ Your implementation should be capable of the following:
 
 ### Constraints
 
--   Your import should be linear in the number of data points.
+-   Given a fixed number of records, the import speed should grow _linearly_ with the number of attributes.
 
 ### Submission
 
@@ -42,7 +42,7 @@ You do *not* know the analyses at the moment you are importing the data. The que
 
 #### Aggregation syntax
 
-It is left to the implementer to decide how aggregrations are supplied to the program. For example, the syntax might look like this:
+It is left to the implementer to decide how aggregations are supplied to the program. For example, the syntax might look like this:
 
     AVG <aggregation attribute> <grouping attribute>
     MIN <aggregation attribute> <grouping attribute>
