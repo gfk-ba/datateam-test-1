@@ -21,8 +21,9 @@ Your implementation should be capable of the following:
 ### Submission
 
 -   You must attach a small document with a concise explanation of your design decisions and any short cuts you take in your implementation.
--   Your code has to be written in C++. It should compile with GCC and/or CLang. You must add a description on how to build and execute the program.
+-   Your implementation should use Python (version >= 2.7).
 -   You are allowed to use *open source* libraries.
+    -   We want you to *implement* the necessary algorithms, you should not use existing implementations (e.g. Numpy's groupBy implementation).
 
 ### Extensibility 
 
